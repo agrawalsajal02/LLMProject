@@ -83,7 +83,6 @@ const randomQueries = [
     'playful dolphin',
     'chasing tail',
     'silly face',
-    'jump scare',
     'prank reaction',
     'giggling parrot',
     'hovering owl',
@@ -123,8 +122,8 @@ app.get('/send-email', async (req, res) => {
         emailHtml += '</body></html>';
 
         console.log("Sending Email");
-        await sendEmail('sajal.agarwal705@gmail.com', 'Daily Summary', emailHtml);
-
+        await sendEmail('sajal.agarwal705@gmail.com', 'Motivation', emailHtml);
+        await sendEmail('agarwal.tanya8@gmail.com', 'Motivation', emailHtml);
         res.send('Email sent successfully!');
     } catch (error) {
         console.error("Error sending email: ", error);
