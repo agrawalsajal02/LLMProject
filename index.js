@@ -12,6 +12,10 @@ app.listen(port, () => {
 });
 
 
+app.get('/', (req, res) => {
+    res.send('Hey this is my API running 🥳')
+  })
+
 import OpenAI from "openai";
 
 const openai2 = new OpenAI({
@@ -51,20 +55,20 @@ app.get('/send-email', async (req, res) => {
         // 2. Fetch joke of the day.
         // const joke = "Your joke source..."+; // Modify as per your source
 
-        // const joke = await fetchJokesFromOpenAi();
-        // emailContent += `Joke of the day: ${joke}\n\n`;
+        const joke = await fetchJokesFromOpenAi();
+        emailContent += `Joke of the day: ${joke}\n\n`;
 
-        // // 3. Fetch motivation of the day from ChatGPT OpenAI API.
-        // // const motivation = await fetchMotivationFromOpenAI();
-        // // emailContent += `Motivation of the day: ${motivation}\n\n`;
+        // 3. Fetch motivation of the day from ChatGPT OpenAI API.
+        const motivation = await fetchMotivationFromOpenAI();
+        emailContent += `Motivation of the day: ${motivation}\n\n`;
 
         // // // 4. Fetch tasks from Notion.
         // // const tasks = await fetchTasksFromNotion();
         // // emailContent += `Tasks completed yesterday:`;
 
         // // 5. Send the email.
-        // console.log("sending Email")
-        // await sendEmail('sajal.agarwal705@gmail.com', 'Daily Summary', emailContent);
+        console.log("sending Email")
+        await sendEmail('sajal.agarwal705@gmail.com', 'Daily Summary', emailContent);
 
         res.send('Email sent successfully!');
     } catch (error) {
@@ -82,8 +86,8 @@ async function fetchBirthdaysFromGoogleCalendar() {
 async function fetchMotivationFromOpenAI() {
     // Implement OpenAI API logic here.
     // Return motivation text.
-    console.log("Fetching Motivation Quotes From OpenAI")
-    return await openaiQuery("Give me some motivation to perform my duties")
+    console.log("Fetching quote from bhagwat geeta")
+    return await openaiQuery("Give a quote from bhagwat geeta")
 }
 
 async function fetchTasksFromNotion() {
