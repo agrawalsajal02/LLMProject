@@ -44,31 +44,86 @@ const openaiQuery = async (userPrompt) => {
     });
   };
 
+  const TENOR_API_ENDPOINT = "https://tenor.googleapis.com/v2/search";
+  const TENOR_API_KEY = process.env.TENOR_API_KEY;
+
+  const fetchGifFromTenor= async (query) =>{
+    return new Promise((resolve, reject) => {
+        axios.get(TENOR_API_ENDPOINT, {
+            params: {
+                q: query,
+                key: TENOR_API_KEY,
+                limit: 1
+            }
+        })
+        .then(response => {
+            if (!response.data.results || response.data.results.length === 0) {
+                // console.log(response.data.media_formats);
+                reject(new Error('No GIF found'));
+            } else {
+                console.dir(response.data.results[0].media_formats.tinygif.url)
+                resolve(response.data.results[0].media_formats.tinygif.url);
+            }
+        })
+        .catch(error => {
+            reject(error);
+        });
+    });
+}
+
+const randomQueries = [
+    'laughing baby',
+    'excited squirrel',
+    'dancing grandma',
+    'funny fail',
+    'cute hedgehog',
+    'sleepy koala',
+    'clumsy penguin',
+    'surprised llama',
+    'playful dolphin',
+    'chasing tail',
+    'silly face',
+    'jump scare',
+    'prank reaction',
+    'giggling parrot',
+    'hovering owl',
+    'slippery floor',
+    'startled cat',
+    'breakdancing dog',
+    'turtle speed race',
+    'awkward handshake',
+    'funny cat' // Included your initial query as well
+];
+
+const getRandomQuery = (queries) => {
+    const randomIndex = Math.floor(Math.random() * queries.length);
+    return queries[randomIndex];
+};
+
+
+
 app.get('/send-email', async (req, res) => {
-    let emailContent = '';
+   let emailHtml = '<html><body>';
 
     try {
-        // // 1. Fetch birthdays from Google Calendar API.
-        // const birthdays = await fetchBirthdaysFromGoogleCalendar();
-        // emailContent += `Birthdays coming up: `;
-
-        // 2. Fetch joke of the day.
-        // const joke = "Your joke source..."+; // Modify as per your source
-
+    
         const joke = await fetchJokesFromOpenAi();
-        emailContent += `Joke of the day: ${joke}\n\n`;
+        emailHtml += `<h2>Joke of the day:</h2> <p>${joke}</p>`;
 
-        // 3. Fetch motivation of the day from ChatGPT OpenAI API.
+        console.log("Fetching Tenor API");
+        const gifUrl = await fetchGifFromTenor(getRandomQuery(randomQueries));
+        console.log(gifUrl)
+        emailHtml += `<p><img src="${gifUrl}"  alt="Random Funny GIF" /></p>`;
+
+
         const motivation = await fetchMotivationFromOpenAI();
-        emailContent += `Motivation of the day: ${motivation}\n\n`;
+        emailHtml += `<h2>Motivation of the day:</h2> <p>${motivation}</p>`;
 
-        // // // 4. Fetch tasks from Notion.
-        // // const tasks = await fetchTasksFromNotion();
-        // // emailContent += `Tasks completed yesterday:`;
+        // Complete the HTML
+        emailHtml += '</body></html>';
 
-        // // 5. Send the email.
-        console.log("sending Email")
-        await sendEmail('sajal.agarwal705@gmail.com', 'Daily Summary', emailContent);
+        console.log("Sending Email");
+        await sendEmail('sajal.agarwal705@gmail.com', 'Daily Summary', emailHtml);
 
         res.send('Email sent successfully!');
     } catch (error) {
@@ -115,7 +170,8 @@ async function sendEmail(to, subject, text) {
         from: GMAIL_USERNAME,
         to: to,
         subject: subject,
-        text: text
+        // text: text
+        html: text
     };
 
     await transporter.sendMail(mailOptions);
