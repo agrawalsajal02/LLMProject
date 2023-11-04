@@ -20,4 +20,4 @@ jobs:
     steps:
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: curl -X GET https://llm-project-dkz03amal-sajalagarwal702.vercel.app/send-email
+        run: curl -X GET https://llm-project-ioo2cr54z-sajalagarwal702.vercel.app/send-email
