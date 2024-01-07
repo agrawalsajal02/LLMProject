@@ -15,7 +15,10 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import {fetchTopicForJournal} from "./services/journal.js"
 import {fetchTwoBhaktiVideo,fetchTwoMotivationalVideos,fetchTwoSongVideo} from "./services/youtubeVideo.js"
+import { connectDB } from "./CONFIG/db.js";
+import taskService from './routes/taskService.js';
 
+connectDB();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -29,10 +32,23 @@ const EMAIL_SUBJECT = `DayStarterDigest - A letter to Yourself - ${date}`;
 
 const app = express();
 
+// Middleware for parsing application/json
+app.use(express.json());
+
+// Middleware for parsing application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.static('public'));
+
 app.use('/pdf', pdfRoutes);
+app.use('/goal', taskService);
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.get('/', (req, res) => res.send('Hey this is my API running 🥳'));
 app.get('/send-email', generateAndSendEmail);
+
+
+app.set('view engine', 'ejs');
+
 
 app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
 

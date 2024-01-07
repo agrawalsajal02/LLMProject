@@ -1,0 +1,177 @@
+suggest me more ideas to be done in my app . I am building an application , can have an android.ios app which will help to increase productivity of students or working professional by reminding their work and rewarding with their work and providing motivation time to time . at the end of day , they will get the email what they have completed today , they can either mark in email or in app about completion of that task , if that task is not completed , it will go into next day , next week , or next month slot depdending on severity of slots . I want this app to repace social media for that please remind my friends , family birthday as well . suppose if someone want to complete a book , he can upload a pdf , can read 2-3 pages daily and app can track the progress of it . At the end of month , you will get all the accoplised task , you can set your monthly , yealy weekly goals and app will show the progress of it . some other ideal below Title	Assignees	Status
+Different encyption algorithm ,assymtric and symmitric		
+long pending small projects link implementing jwt and oauth2 , revisiting the react full stack project on github		
+Learn Webhooks ": Use Cases: Webhooks are commonly used in scenarios like:		
+whatever links are learning store in database or in notion dataabase for further reference		
+websockets / webflux with spring boot		
+coding meme generator		
+on saturday and sunday , suggest me build app like s3 . video streaming , unique link generator and many more . deploy all in versal. create a ui to enable or disable feature of morning digest api		
+for daily activities , fetch from notion database . for activities done in weekends , create a notion page , then we can add activities and these activities we can get in email on wekkends		
+process all theapi call async in vercel		
+suggest one cs related topic daily to read		
+affirmations api		
+which places you want to travel . scrap a 2 from a list and call chatgpt about the beauty of that place		
+get a picture of expresive car , house you want to buy in future		
+new english work daily , or a page to read may be scrap the aeon api and scrap the page and suggest a new article https://aeon.co/psychology		
+also you can call chatGPT for further reading and futher links to this aritcle		
+suggest a leetcode problem for a today		
+nasa api for information about planets and get information randomly about space facts.		
+integrate random fact api		
+Web Scraping: WebScraping.AI API		
+real time api to fetch the performance of your stocks or your bucketlist stock is at what possition , can we take them ?		
+Indian Mutual Funds: CAMS API		
+more advance : i have a pdf of a book that i dont have time to read . link gk book or english book or system design book . i want to upload this book to pdf.ai and ask me different questions and give answers . or upload each page to somewhere and suggest one page/two every day.		
+indian news api and indian tech api  Inshorts API		
+api for coming festivals and holiday .		
+scrap the job portals for job openings		
+startup api : YourStory API		
+at the end , if completed all , it will make in the databse that done for today . and daily give me records of my progress		
+List of your friends at linkedin at your school and college batch and where they are currently now		
+a survery result of why social media / p is pad		
+Go through current email of daily items and add the other column like you can add today all items in sheet ,it will get contained in email in the end of day and if it is also not completed by end of day , we have to fill everything which is not completed , we will get  all thouse at the end of week		
+Seperate glowroad learning : Go Though the code of rating service , subscriptiopn service , scratch card service , wallet service , Userservice. , notification service code base. Learn andorid code base		
+Design pattern ,  a coding practice , anything from josua effective java ,		
+Common questions : how does bank work , how do they settle ammount , how does ac work . how does tv work , how does refridgerator work , how does clock work , how. plane can fly , how gst work , how upi work ,		
+Why mind goes blank when anxiety of top , not able to answer simple question : few things noted: you are in hurry to answer without undersnading things , you say words which you not suppose to say , not control on air		
+webhooks , websession , jwt , aes ancrytpion algorith, , multithreading playlist		
+start learning LLms		
+A top proity work in the email display at the top : that is fetching from then notion page		
+you will have our stammering audios , anylise using llm and find out which letters/words you need practice most		
+if problem in indroducing yousf , record your video daily 15 minute in email , tell things in resume like about projects		
+letters you stuck most : l lead . m masala		
+activity in mail to improve imagination		
+what are the acievements for today and what can be improved in email , display all acievements at the end of weekend summary , each day improvemebt is fed to openai to prepare for summary for improvement		
+customised email  in morning and evening and some oterh email during the day , no email in night		
+how can you make your life better : a notion page		
+communication notes and words to that email		
+what habbit you want to develop : like hitting a jim , running daily , dpeaking on phone on 30 minutes , meeting new people , swimming , ridfjng a bike to different pqrts of bsngalore , travelling solo		
+any new coding strategy yo learn like suffix tree , segment tree , feneick tree and advance dp problems		
+prepare for mba/neet/gate/ssc/upsc in advance . list fown common topics  and send it to mail likd gk as nd rnhlish		
+what you see in leaders : they are curious , they ask a lot of questiions		
+have taken medicine or breathing practice on email		
+calender fetch in gmail		
+fetch images from pinterest regarding indian memes		
+Give Presentation on all the topics you learn and got on weekdays , give presentation on weekends		
+https://twitter.com/AkshayNarisetti/status/1720058222936309813 and other save to notions		
+Top 45 most commonly asked System Design Problems with resources		
+https://www.linkedin.com/feed/update/urn:li:activity:7046322513252909059/		
+System Design follow-up tech blogs		
+Books to read : suggest one book		
+System desing blogs : http://highscalability.com/all-time-favorites/		
+https://twitter.com/AkshayNarisetti/status/1720058222936309813		
+suggest some video or part of epidode in series in weekends like cosmos		
+suggest story of modern politics like world war 1,2		
+https://www.youtube.com/watch?v=_zyKvPvh808&list=PLIFyRwBY_4bTwRX__Zn4-letrtpSj1mzY&index=10		
+Companies interview question we can also randomly ask		
+add mongo db and sql databse		
+Customised Subject heading like time for DSA - DailyDigest		
+System Design grokking book in email		
+dsa notes in email		
+ssc/cat commom important topics in email		Title	Assignees	Status
+when calling open api , add text not send more than 200 words		In Queue
+what is your goal in next 2 months , and for next 1 year		In Queue
+get a random meme : https://github.com/lukePeavey/quotable#get-random-quote		In Queue
+at last arrange everything properly in one email using chatgpt only		In Queue
+embeed a motivational video of yourself or sandeep maheshwari in email , get different email or songs on email		In Queue
+Linkedin Wall		In Queue
+At the end of day you will get the mail what you have completed today . if not completed , just check not completed , and it will process to next available slot according to it is recurable or not		In Queue
+You can also select the importancy of this task like this task can be done in this week , this month or this year , how urgent it is		In Queue
+You can track your habbit , health , job , relationships and other		In Queue
+Other item to track in email		In QueueTitle	Assignees	Status
+get a random system design article daily . scrap system design 101 heading and suggest , beware you need to store somewhere that this heading you already showed , dont repreat the same heading . https://github.com/ByteByteGoHq/system-design-101#evolution-of-airbnbs-microservice-architecture-over-the-past-15-years		75 hard challanges
+daily journaling about some topic , record a video and provide in the link and sotre in the database about the progress		75 hard challanges
+task items you have to do for today , what is more important , what is less , and a motivation why you started		75 hard challangesTitle	Assignees	Status
+Bhagwath Geeta Shlok : https://bhagavadgitaapi.in/slok/2/66/gita.svg , https://github.com/vedicscriptures/bhagavad-gita-api		Done
+Pdf Spliter		Done
+
+
+
+
+
+
+
+
+
+
+Here are ten additional ideas to enhance your application, along with high-level steps for implementation:
+
+Customizable Daily Routine Planner:
+
+Implement a feature where users can plan their daily routines.
+Allow users to add, edit, and delete tasks.
+Integrate with services/notion.js to store and retrieve daily plans.
+Mental Wellness Activities:
+
+Integrate mindfulness and meditation activities.
+Use services/youtubeVideo.js to suggest daily meditation or yoga videos.
+Provide a journaling feature using data/journalTopics.js for self-reflection.
+Learning and Development Tracker:
+
+Implement a feature to track learning goals (e.g., online courses, reading).
+Use utils/pdfUtils.js to manage and track reading progress.
+Integrate with external educational APIs to fetch and suggest courses.
+Gamified Challenges:
+
+Introduce daily or weekly challenges for users (e.g., fitness, learning, creativity).
+Implement a points and rewards system to motivate users.
+Use services/openai.js to generate random challenge ideas.
+Social Interaction Feature:
+
+Add functionality to connect with friends or family within the app.
+Implement a chat or message board feature.
+Integrate with external APIs for friend recommendations or social interactions.
+Financial Management Tool:
+
+Integrate a basic expense tracker.
+Allow users to set budgets and track spending.
+Integrate with financial APIs for real-time expense tracking and analysis.
+Personalized News Feed:
+
+Implement a feature to curate a personalized news feed.
+Use web scraping (as in Test.js) to gather news from preferred sources.
+Integrate with news APIs to fetch news based on user interests.
+Meal Planning and Nutrition:
+
+Add functionality for meal planning and tracking nutritional intake.
+Integrate with food and nutrition APIs for recipe suggestions and calorie tracking.
+Allow users to set and track dietary goals.
+Skill Development Workshops:
+
+Schedule and manage online workshops or webinars.
+Integrate with video conferencing tools for live sessions.
+Use services/gmail.js to send workshop reminders and follow-ups.
+AI-Powered Personal Coach:
+
+Implement an AI coach for personalized advice (using services/openai.js).
+Use AI to analyze user data and provide custom tips for improvement.
+Integrate AI coach with daily task reminders and motivational quotes.
+Each of these ideas can be modularly developed and integrated into your existing application, enhancing its scope and making it a comprehensive tool for personal development and productivity.
+
+
+
+GPT
+Talked to pluginlab.askthecode.dsomok.online
+Talked to pluginlab.askthecode.dsomok.online
+After analyzing the code from the LLMProject repository, I found several relevant files and their contents that can be aligned with the proposed functionalities for your productivity app. Here are some key insights and suggestions based on the existing code:
+
+Email and Notification System: The services/gmail.js file contains code for sending emails, which can be used to send daily summaries of tasks to users. You can enhance this by allowing users to mark tasks as completed directly from the email.
+
+Task Management and Tracking: The services/notion.js file shows integration with Notion, which can be used for managing and tracking tasks. You can expand this to categorize tasks based on their urgency (daily, weekly, monthly) and automate the task rescheduling process.
+
+Birthday Reminders: Implement a function to fetch birthdays from a source (like Google Calendar or contacts) and integrate it with the notification system. This is partially implemented in app.js as fetchBirthdaysFromGoogleCalendar but needs completion.
+
+Progress Tracking for Reading: For tracking reading progress, you can use the utils/pdfUtils.js for handling PDFs. Consider implementing a feature where users can set reading goals (e.g., number of pages) and the app tracks their progress.
+
+Motivation and Learning Content: Use services/openai.js to fetch motivational quotes or interesting facts. You can also use this for suggesting daily learning topics or articles. The data/systemTopics.js and data/journalTopics.js files already contain some content that can be used for daily learning suggestions.
+
+Reward System: Implement a reward system to motivate users. This can include virtual rewards or points for completing tasks, reading goals, or staying off social media.
+
+Social Media Replacement Features: Add features like mood tracking, journaling, or a daily challenge to engage users and provide alternatives to social media usage.
+
+Customizable User Interface: Allow users to customize the app's interface to prioritize features they find most useful, such as task lists, reading progress, or learning topics.
+
+Integration with External APIs: Your app already has integrations with several APIs (like Tenor for GIFs, YouTube for videos). You can expand this to include other APIs for diverse content, like NASA for space facts or news APIs for daily news summaries.
+
+User Feedback and Improvement Suggestions: Implement a feature where users can provide feedback on their accomplishments and areas of improvement. Use this feedback to offer personalized suggestions and improvements.
+
+These suggestions aim to enhance user engagement and productivity, making the app a comprehensive tool for daily personal and professional development.

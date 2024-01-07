@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Goal Planner</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/scripts.js"></script>
+</head>
+<body>
+  <div class="main-container">
+    <div class="form-container">
+  <div class="container">
+    <% if (goalSaved) { %>
+      <div class="success-banner">
+        Goals saved successfully!
+      </div>
+    <% } %>
+      // Enter how long it take to complete the goal
+      // also set this goal in google calender , there will be link in google calender to mark this task done
+      // can it brak it donwn into multiple slots and how many slot it require
+      // type of goal , academic , job promotion , skills , english or some other
+      // feature of removing the task and other feature of rescheduling the task to some other future time
+      // mark the slot is unclomepte as well , 
+    <h2>Enter Your Weekly Goals</h2>
+    <form id="goalForm" action="/goal/add-goal" method="post">
+      <label for="weekSelection">Select Week:</label>
+      <input type="week" id="weekSelection" name="week" required>
+
+      <div id="goalEntries">
+        <!-- Goal Entry Template -->
+        <div class="goal-entry">
+          <input type="text" name="description[]" placeholder="Goal/Task for the week" required>
+   <!-- Inside index.ejs, update the select inputs -->
+
+      <select name="priority[]">
+        <% priorityOptions.forEach(function(option) { %>
+          <option value="<%= option %>"><%= option.charAt(0).toUpperCase() + option.slice(1) %> Priority</option>
+        <% }); %>
+      </select>
+
+      <select name="preferredTime[]">
+        <% timeOptions.forEach(function(option) { %>
+          <option value="<%= option %>"><%=option%></option>
+        <% }); %>
+      </select>
+
+      <input type="hidden" name="recurring[]" value="false">
+      <div class="checkbox-group">
+        <input type="checkbox" id="recurring" name="recurring[]" value="true">
+        <label for="recurring">Recurring Task</label>
+      </div>
+      </div>
+      <input type="number" name="duration[]" placeholder="Duration (hours)" required min="1">
+
+      <select name="goalType[]">
+        <option value="academic">Academic</option>
+        <option value="job promotion">Job Promotion</option>
+        <option value="skills">Skills</option>
+        <option value="english">English</option>
+        <option value="other">Other</option>
+      </select>
+      
+      <button type="button" id="addGoal">Add Another Goal</button>
+      <button type="submit">Submit Goals</button>
+    </form>
+  </div>
+</div>
+<div class="container">
+<div class="goals-container">
+  <% if (goalsByWeek && Object.keys(goalsByWeek).length > 0) { %>
+    <% Object.keys(goalsByWeek).sort().forEach(week => { %>
+      <div class="week-container">
+        <button class="week-toggle" onclick="toggleWeekGoals('<%= week %>')">
+          <%= goalsByWeek[week].readableWeek %>
+        </button>
+        <ul id="<%= week %>" class="goal-list" style="display:none;">
+          <% goalsByWeek[week].goals.forEach(goal => { %>
+            <li class="<%= goal.priority %>">
+              <span class="goal-description"><%= goal.description %></span>
+              <span class="goal-time"><%= goal.preferredTime %></span>
+              <% if (goal.recurring) { %>
+                <span class="goal-recurring">Recurring</span>
+              <% } %>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    <% }); %>
+  <% } else { %>
+    <p>No goals set for upcoming weeks.</p>
+  <% } %>
+</div>
+
+<!-- Add this section below your goal form in the EJS file -->
+
+<!-- Add this section below your goal form in the EJS file -->
+
+<div class="weekly-schedules">
+  <% weeklySchedules.forEach((schedule, index) => { %>
+    <div class="weekly-schedule">
+      <button class="toggle-week" onclick="toggleWeek('<%= index %>')">
+        <%= formatDateRange(schedule.weekStart, schedule.weekEnd) %>
+      </button>
+      <div id="week-<%= index %>" class="week" style="display: none;">
+        <% schedule.days.forEach((day,dayIndex) => { %>
+          <div class="day">
+            <h4><%= day.date.toDateString() %></h4>
+            <ul>
+              <% day.timeSlots.forEach((slot,slotIndex) => { %>
+                <li class="<%= slot.isAssigned ? 'assigned' : 'free' %>">
+                  <div class="slot-action">
+                  <span><%= slot.startTime %> - <%= slot.endTime %></span>
+                  <% if (slot.isAssigned && slot.goalId) { %>
+                    <span><%= slot.goalId.description %></span>
+                    <span>(<%= slot.goalId.priority %>)</span>
+                    <form action="/goal/schedule/remove/<%= schedule._id %>/<%= dayIndex %>/<%= slotIndex %>" method="post">
+                      <button type="submit">Remove</button>
+                    </form>
+                  <% } else { %>
+                    <span>Free</span>
+                  <% } %>
+                  <% if (slot.isAssigned && !slot.isCompleted) { %>
+                    <form action="/goal/schedule/complete/<%= schedule._id %>/<%= dayIndex %>/<%= slotIndex %>" method="post">
+                      <button type="submit" class="mark-complete-btn">Mark as Completed</button>
+                    </form>
+                  <% }  else if(slot.isAssigned && slot.isCompleted){ %>
+                    <form action="/goal/schedule/complete/<%= schedule._id %>/<%= dayIndex %>/<%= slotIndex %>" method="post">
+                      <button type="submit" class="mark-complete-btn" disable>Completed</button>
+                    </form>
+                    <% } %>
+                  </div>
+                </li>
+  
+              <% }); %>
+            </ul>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  <% }); %>
+</div>
+
+
+</div>
+
+
+</div>
+</body>
+</html>

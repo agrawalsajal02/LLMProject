@@ -1,0 +1,286 @@
+
+    .weekly-schedule-container {
+  margin-top: 20px;
+}
+
+.schedule-week {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.schedule-day {
+  margin-top: 10px;
+}
+
+.time-slots {
+  list-style: none;
+  padding: 0;
+}
+
+.time-slots li {
+  margin-bottom: 5px;
+}
+
+.time-slot {
+  font-weight: bold;
+}
+
+.goal-description {
+  margin-left: 10px;
+}
+
+.goal-priority {
+  margin-left: 10px;
+  font-style: italic;
+}
+
+.empty-slot {
+  color: #999;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-around;
+}
+.goals-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.week-container h3 {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.week-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.week-container li {
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.week-container .time {
+  font-size: 0.9em;
+  color: #666666;
+}
+
+.week-container .recurring {
+  background-color: #4CAF50;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
+.low {
+  border-left: 5px solid #4CAF50; /* Low priority color */
+}
+
+.medium {
+  border-left: 5px solid #FFEB3B; /* Medium priority color */
+}
+
+.high {
+  border-left: 5px solid #F44336; /* High priority color */
+}
+
+.form-container {
+    .success-banner {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      max-width: 1000px;
+    }
+    .week-container {
+  margin-bottom: 20px;
+}
+
+.week-toggle {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  text-align: left;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.week-toggle:hover {
+  background-color: #e9e9e9;
+}
+
+.goal-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.goal-list li {
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goal-description {
+  flex-grow: 1;
+}
+
+.goal-time {
+  margin-left: 20px;
+}
+
+.goal-recurring {
+  font-size: 0.8em;
+  color: #4CAF50;
+  margin-left: 20px;
+}
+
+/* Styling for priority */
+.low {
+  border-left: 4px solid #4CAF50; /* Example color for low priority */
+}
+
+.medium {
+  border-left: 4px solid #FFEB3B; /* Example color for medium priority */
+}
+
+.high {
+  border-left: 4px solid #F44336; /* Example color for high priority */
+}
+  }
+
+  .weekly-schedules {
+  margin-top: 20px;
+}
+
+.toggle-week {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  width: 100%;
+  text-align: left;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.toggle-week:hover {
+  background-color: #367B35;
+}
+
+.week {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.day h4 {
+  margin: 10px 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.assigned {
+  background-color: #E7F4E4;
+}
+
+.free {
+  background-color: #FFFFFF;
+}
+
+/* Add this to your existing styles.css file */
+.slot-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mark-complete-btn {
+  padding: 5px 10px; /* Smaller padding */
+  font-size: 0.8em; /* Smaller font size */
+  margin-left: 10px; /* Spacing from the left */
+}
+
+/* Update your .assigned and .free classes to remove any padding or margin definitions */
+.assigned, .free {
+  background-color: #E7F4E4; /* Or any color you prefer for assigned slots */
+}
+
+.free {
+  background-color: #FFFFFF; /* Or any color you prefer for free slots */
+}
