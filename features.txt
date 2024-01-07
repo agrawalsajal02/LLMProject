@@ -1,0 +1,42 @@
+     few more suggestions , create a task points or a sprint board / github board to ship the features one my one
+        read about different encyption algorithm ,assymtric and symmitric  
+        long pending small projects link implementing jwt and oauth2 , revisiting the react full stack project on github
+        Learn Webhooks ": Use Cases: Webhooks are commonly used in scenarios like:
+                Notifying a payment gateway of a successful payment.
+                Informing a system that a new user has registered.
+                Alerting when there's a new comment or post in a forum."
+        whatever links are learning store in database or in notion dataabase for further reference
+        websockets / webflux with spring boot
+        coding meme generator
+        when calling open api , add text not send more than 200 workds
+        on saturday and sunday , suggest me build app like s3 . video streaming , unique link generator and many more . deploy all in versal. create a ui to enable or disable feature of morning digest api
+        for daily activities , fetch from notion database . for activities done in weekends , create a notion page , then we can add activities and these activities we can get in email on wekkends
+        process all theapi call async in vercel . 
+
+
+        suggest one cs related topic daily to read
+        name the app : DayStarterDigest
+        what is your goal in next 2 months , and for next 1 year
+        affirmations api
+        which places you want to travel . scrap a 2 from a list and call chatgpt about the beauty of that place
+        get a picture of expresive car , house you want to buy in future
+        new english work daily , or a page to read may be scrap the aeon api and scrap the page and suggest a new article https://aeon.co/psychology
+        Bhagwath Geeta Shlok : https://bhagavadgitaapi.in/slok/2/66/gita.svg , https://github.com/vedicscriptures/bhagavad-gita-api
+        get a random meme : https://github.com/lukePeavey/quotable#get-random-quote
+        get a random system design article daily . scrap system design 101 heading and suggest , beware you need to store somewhere that this heading you already showed , dont repreat the same heading . https://github.com/ByteByteGoHq/system-design-101#evolution-of-airbnbs-microservice-architecture-over-the-past-15-years
+        also you can call chatGPT for further reading and futher links to this aritcle
+        suggest a leetcode problem for a today
+        nasa api for information about planets and get infomratio randomly about space facts.
+        get random fact api
+        Web Scraping: WebScraping.AI API
+        real time api to fetch the performance of your stocks or your bucketlist stock is at what possition , can we take them ?
+        at last arrange everything properly in one email using chatgpt only
+        Indian Mutual Funds: CAMS API
+        more advance : i have a pdf of a book that i dont have time to read . link gk book or english book or system design book . i want to upload this book to pdf.ai and ask me different questions and give answers . or upload each page to somewhere and suggest one page/two every day.
+        indian news api and indian tech api  Inshorts API
+        api for coming festivals and holiday . 
+        scrap the job portals for job openings
+        startup api : YourStory API
+        at the end , if completed all , it will make in the databse that done for today . and daily give me records of my progress
+        daily journaling about some topic , record a video and provide in the link and sotre in the database about the progress
+        task items you have to do for today , what is more important , what is less , and a motivation why you started
