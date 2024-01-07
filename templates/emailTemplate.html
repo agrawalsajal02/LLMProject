@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Digest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F7F9FC;
+            margin: 0;
+            padding: 40px 0;
+            color: #333;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .heading {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        
+        .gif {
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .topics {
+            margin: 40px 0;
+        }
+
+        a.topic-link {
+            display: inline-block;
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: 2px solid #007BFF;
+            border-radius: 8px;
+        }
+
+        a.topic-link:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .video-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px; /* Adjust as needed */
+        }
+
+        .video-column {
+            width: calc(50% - 10px); /* Adjust width and spacing */
+            box-sizing: border-box;
+            margin-right: 20px;
+        }
+
+        .video-thumbnail {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <h1>Your Today Digest Items are below : Remember <b>Be Curious</b></h1>
+        <!-- in future this video can also be randomised -->
+        <hr>
+        <h2>First Lest start with some motivational Video</h2>
+        <div class="video-row">
+            <div class="video-column">
+                <a href="https://www.youtube.com/watch?v={{motivationalVideo-1}}" target="_blank">
+                    <img class="video-thumbnail" src="https://img.youtube.com/vi/{{motivationalVideo-1}}/maxresdefault.jpg" alt="Video Title"/>
+                </a>
+            </div>
+            <div class="video-column">
+                <a href="https://www.youtube.com/watch?v={{motivationalVideo-2}}" target="_blank">
+                    <img class="video-thumbnail" src="https://img.youtube.com/vi/{{motivationalVideo-2}}/maxresdefault.jpg" alt="Video Title"/>
+                </a>
+            </div>
+        </div>
+        <br>
+        <hr>
+
+        <h2>Bhakti Songs </h2>
+        <div class="video-row">
+            <div class="video-column">
+                <a href="https://www.youtube.com/watch?v={{bhaktiVideo-1}}" target="_blank">
+                    <img class="video-thumbnail" src="https://img.youtube.com/vi/{{bhaktiVideo-1}}/maxresdefault.jpg" alt="Video Title"/>
+                </a>
+            </div>
+            <div class="video-column">
+                <a href="https://www.youtube.com/watch?v={{bhaktiVideo-2}}" target="_blank">
+                    <img class="video-thumbnail" src="https://img.youtube.com/vi/{{bhaktiVideo-2}}/maxresdefault.jpg" alt="Video Title"/>
+                </a>
+            </div>
+        </div>
+
+        <br>
+        <hr>
+
+        <h2>Self Sing Songs
+        </h2>
+
+        <div class="video-row">
+            <div class="video-column">
+                <a href="https://www.youtube.com/watch?v={{songVideo-1}}" target="_blank">
+                    <img class="video-thumbnail" src="https://img.youtube.com/vi/{{songVideo-1}}/maxresdefault.jpg" alt="Video Title"/>
+                </a>
+            </div>
+            <div class="video-column">
+                <a href="https://www.youtube.com/watch?v={{songVideo-2}}" target="_blank">
+                    <img class="video-thumbnail" src="https://img.youtube.com/vi/{{songVideo-2}}/maxresdefault.jpg" alt="Video Title"/>
+                </a>
+            </div>
+            <div class="video-column">
+                <a href="https://www.youtube.com/watch?v={{songVideo-3}}" target="_blank">
+                    <img class="video-thumbnail" src="https://img.youtube.com/vi/{{songVideo-3}}/maxresdefault.jpg" alt="Video Title"/>
+                </a>
+            </div>
+        </div>
+
+        <hr>
+        <br>
+
+        <div class="heading">Joke of the day:</div>
+        <p st>{{joke}}</p>
+        <img class="gif" src="{{gifUrl}}" alt="Random Funny GIF" height="400" width="400"/>
+        <hr>
+        <h2><a href="https://www.notion.so/Roadmap-for-Growth-Promotion-891270c86db747d990e142b653a766b8?pvs=4">Goal for next 2 month </a></h2>
+        <p>1. Crack SDE2 before 31 dec</p>
+        <p>2. Have a excellent Communication skill</p>
+        <p>3. No Social Media (Instagram and twitter and NNN) to increase focus and concentration. Work on you visual imagination</p>
+        <hr>
+        <h3>Complete Below Task  </h3>
+        <p>1. <a href="https://www.youtube.com/watch?v=rliSgjoOFTs&list=PL6W8uoQQ2c61X_9e6Net0WdYZidm7zooW">LLD playlist</a> </p>
+        <p>2. Talk on phone with people for 2 hours daily </p>
+        <p>3. Complete revision of DSA : revise graph , dp , prefix tree and do some questions </p>
+        <hr>
+        <br>
+        <div class="topics">
+            <h2>Today learnings</h2> 
+            <br>
+            <a href="{{systemDesignPdfUrl}}" class="topic-link">System Design</a>
+            <p>Read this : <a href="http://highscalability.com/all-time-favorites/">highscalability</a></p>
+            <br>
+            <a href="{{navalRaikantPdfUrl}}" class="topic-link">Naval Ravikant</a>
+            <br>
+            <a href="{{getRandomDesignTopic}}" class="topic-link">{{subTopicName}}</a>
+            <br>
+            <br>
+            <hr>
+            <h2>Mentoring By Krishna</h2> 
+            <br>
+            <img class="jpg" src="https://i0.wp.com/www.epics.in/wp-content/uploads/2018/07/Krishna-in-Mahabharat.jpg" alt="shlok" height="400" width="400"/>
+            <br>
+            <img class="jpg" src="{{geetaShlok}}" alt="geeta shlok" />
+            <br>
+            <br>
+            <a href="{{notionPage}}" class="topic-link">Today Journal Link</a>
+            <p><b>Here is idea you can pickup : </b>{{journalIdea}} </p>
+            <br>
+
+            <hr>
+
+            <h1>News</h1>
+            <p>Note : Never Read a newspaper for telling others or cracking interviews. Leave twitter , Insta , read these</p>
+            <h3>Indian Startup</h3>
+            <a href="https://indianstartupnews.com/">ISN</a><br>
+            <a href="https://yourstory.com/">Your Story</a><br>
+
+            <h3>Global Startup</h3>
+            <a href="https://techcrunch.com/">ISN</a><br>
+            <a href="https://www.theinformation.com/">Your Story</a><br>
+
+            <h3>Indian News</h3>
+            <a href="https://economictimes.indiatimes.com/">Economic Times</a><br>
+            <h3>Global  News</h3>
+            <a href="https://www.nytimes.com/international/">Newyork Times</a><br>
+
+            <h3>Tech News</h3>
+            <a href="https://www.cnet.com/">Cnet</a><br>
+            <a href="https://www.nytimes.com/international/">Zdnet</a><br>
+            <hr>
+            <h3>Articles</h3>
+            <a href="https://aeon.co/psychology/">Aeon</a><br>
+            <hr>
+            <p>Few more suggestions : <a href="https://github.com/agrawalsajal02/Shop-Pro-App/tree/master">Go to the React app created</a> , learn other authentication mechanisms , encryption </p>
+            <a href="https://drive.google.com/drive/u/3/folders/1Zi7TRHNnskg1pAzkZC3bIxflkcjxmQG2">React Course</a><br>
+            <a href="https://drive.google.com/drive/u/3/folders/1OOM9DvWK3uWrlC-itxycbYroDS439Fhv">System Design</a><br>
+            <a href="https://docs.google.com/document/d/1-jqdPUCEJIVPAaSZ2490ihUQ10aZW9-bdvQBoS6oH_k/edit#heading=h.tyk8i34p7n74">System Design Interviews</a><br>
+            <a href="https://drive.google.com/drive/u/3/folders/1i8OeiTyxPeg2CrX-VPR_ZRAq8Xrsg27a">GFG Backend</a><br>
+            <a href="https://drive.google.com/drive/u/3/folders/1fVQsrP_KET7aQA6zVToQKC0R_W9I_Bjz">Microservices</a><br>
+            <a href="https://drive.google.com/drive/u/3/folders/1O0aXYJ8meR7TgofyER6ooFzuEDxNXe3w">Non Tech Fiction Books</a><br>
+  
+            <br>
+            <hr>
+            <br>
+            <h3>Study Theme Song</h3>
+            <a href="https://www.youtube.com/watch?v=gUq7CPEjP_4" target="_blank">
+                <a href="https://www.youtube.com/watch?v=gUq7CPEjP_4" target="_blank">
+                    <img class="video-thumbnail" src="https://thumbs.dreamstime.com/z/never-give-up-fitness-motivation-quotes-sport-concept-142965243.jpg" alt="Video Title" height="400" width="400" style="border-radius: 8px;"/>
+                </a>            
+            </a>
+            <br>
+            <h3>Special Video</h3>
+            <a href="https://www.youtube.com/watch?v=e9dZQelULDk" target="_blank">
+                <a href="https://www.youtube.com/watch?v=e9dZQelULDk" target="_blank">
+                    <img class="video-thumbnail" src="https://img.youtube.com/vi/e9dZQelULDk/maxresdefault.jpg" alt="Video Title"/>
+                </a>            
+            </a>
+            <a href="{{email-trigger}}">Trigger the Email Again</a>
+            <br>
+            <h1>System Design Questions</h1>
+
+            <h2>System Design Fundamentals</h2>
+            <ul>
+                <ul>
+                    <li><a href="https://www.cloudflare.com/learning/cdn/what-is-a-cdn/">Content Delivery Network (CDN)</a></li>
+                    <li><a href="https://medium.com/must-know-computer-science/system-design-caching-acbd1b02ca01">Caching</a></li>
+                    <li><a href="https://aws.amazon.com/compare/the-difference-between-throughput-and-latency/">Latency vs Throughput</a></li>
+                    <li><a href="https://www.bmc.com/blogs/cap-theorem/">CAP Theorem</a></li>
+                    <li><a href="https://aws.amazon.com/what-is/load-balancing/">Load Balancing</a></li>
+                    <li><a href="https://redis.com/glossary/acid-transactions/">ACID Transactions</a></li>
+                    <li><a href="https://www.integrate.io/blog/the-sql-vs-nosql-difference/">SQL vs NoSQL</a></li>
+                    <li><a href="https://arpitbhayani.me/blogs/consistent-hashing/">Consistent Hashing</a></li>
+                    <li><a href="https://www.progress.com/tutorials/odbc/using-indexes">Database Index</a></li>
+                    <li><a href="https://www.imperva.com/learn/application-security/rate-limiting/">Rate Limiting</a></li>
+                    <li><a href="https://medium.com/hashmapinc/the-what-why-and-how-of-a-microservices-architecture-4179579423a9">Microservices Architecture</a></li>
+                    <li><a href="https://hackernoon.com/eventual-vs-strong-consistency-in-distributed-databases-282fdad37cf7">Strong vs Eventual Consistency</a></li>
+                    <li><a href="https://aws.amazon.com/compare/the-difference-between-rpc-and-rest/">REST vs RPC</a></li>
+                    <li><a href="https://martinfowler.com/articles/patterns-of-distributed-systems/heartbeat.html">HeartBeat</a></li>
+                    <li><a href="https://medium.com/geekculture/design-patterns-for-microservices-circuit-breaker-pattern-276249ffab33">Circuit Breaker</a></li>
+                    <li><a href="https://blog.dreamfactory.com/what-is-idempotency/">Idempotency</a></li>
+                    <li><a href="https://redis.com/blog/what-is-data-replication/">Data Replication</a></li>
+                    <li><a href="https://www.egnyte.com/guides/governance/data-redundancy">Data Redundancy</a></li>
+                    <li><a href="https://www.mongodb.com/features/database-sharding-explained#">Database Sharding</a></li>
+                    <li><a href="https://www.fortinet.com/resources/cyberglossary/proxy-server">Proxy Server</a></li>
+                    <li><a href="https://www.cloudflare.com/learning/dns/what-is-dns/">Domain Name System (DNS)</a></li>
+                    <li><a href="https://medium.com/must-know-computer-science/system-design-message-queues-245612428a22">Message Queues</a></li>
+                    <li><a href="https://www.nginx.com/learn/api-gateway/">API Gateway</a></li>
+                    <li><a href="https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html">Distributed Locking</a></li>
+                    <li><a href="https://www.lifewire.com/what-does-checksum-mean-2625825">Checksum</a></li>
+                </ul>
+            </ul>
+
+            <h2>𝐄𝐚𝐬𝐲</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=fMZMm_0ZhK4">Design URL Shortener like TinyURL</a></li>
+                <li><a href="https://www.youtube.com/watch?v=josjRSBqEBI">Design Text Storage Service like Pastebin</a></li>
+                <li><a href="https://www.youtube.com/watch?v=8zX0rue2Hic">Design Content Delivery Network (CDN)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=NtMvNh0WFVM">Design Parking Garage</a></li>
+                <li><a href="https://www.youtube.com/watch?v=D0kDMUgo27c">Design Vending Machine</a></li>
+                <li><a href="https://www.youtube.com/watch?v=rnZmdmlR-2M">Design Distributed Key-Value Store</a></li>
+                <li><a href="https://www.youtube.com/watch?v=iuqZvajTOyA">Design Distributed Cache</a></li>
+                <li><a href="https://towardsdatascience.com/ace-the-system-design-interview-job-scheduling-system-b25693817950">Design Distributed Job Scheduler</a></li>
+                <li><a href="https://www.youtube.com/watch?v=uj_4vxm9u90">Design Authentication System</a></li>
+                <li><a href="https://www.youtube.com/watch?v=QpLy0_c_RXk">Design Unified Payments Interface (UPI)</a></li>
+            </ul>
+
+            <h2>𝐌𝐞𝐝𝐢𝐮𝐦</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=VJpfO6KdyWE">Design Instagram</a></li>
+                <li><a href="https://www.youtube.com/watch?v=tndzLznxq40">Design Tinder</a></li>
+                <li><a href="https://www.youtube.com/watch?v=vvhC64hQZMk">Design WhatsApp</a></li>
+                <li><a href="https://www.youtube.com/watch?v=9-hjBGxuiEs">Design Facebook</a></li>
+                <li><a href="https://www.youtube.com/watch?v=wYk0xPP_P_8">Design Twitter</a></li>
+                <li><a href="https://www.youtube.com/watch?v=KYExYE_9nIY">Design Reddit</a></li>
+                <li><a href="https://www.youtube.com/watch?v=psQzyFfsUGU">Design Netflix</a></li>
+                <li><a href="https://www.youtube.com/watch?v=jPKTo1iGQiE">Design Youtube</a></li>
+                <li><a href="https://www.youtube.com/watch?v=CeGtqouT8eA">Design Google Search</a></li>
+                <li><a href="https://www.youtube.com/watch?v=EpASu_1dUdE">Design E-commerce Store like Amazon</a></li>
+                <li><a href="https://www.youtube.com/watch?v=_K-eupuDVEc">Design Spotify</a></li>
+                <li><a href="https://www.youtube.com/watch?v=Z-0g_aJL5Fw">Design TikTok</a></li>
+                <li><a href="https://www.youtube.com/watch?v=lEL4F_0J3l8">Design Shopify</a></li>
+                <li><a href="https://www.youtube.com/watch?v=YyOXt2MEkv4">Design Airbnb</a></li>
+                <li><a href="https://www.youtube.com/watch?v=us0qySiUsGU">Design Autocomplete for Search Engines</a></li>
+                <li><a href="https://www.youtube.com/watch?v=mhUQe4BKZXs">Design Rate Limiter</a></li>
+                <li><a href="https://www.youtube.com/watch?v=iJLL-KPqBpM">Design Distributed Message Queue like Kafka</a></li>
+                <li><a href="https://www.youtube.com/watch?v=qsGcfVGvFSs">Design Flight Booking System</a></li>
+                <li><a href="https://www.youtube.com/watch?v=07jkn4jUtso">Design Online Code Editor</a></li>
+                <li><a href="https://www.youtube.com/watch?v=dUMWMZmMsVE">Design Stock Exchange System</a></li>
+                <li><a href="https://www.youtube.com/watch?v=kIcq1_pBQSY">Design an Analytics Platform (Metrics & Logging)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=CUwt9_l0DOg">Design Notification Service</a></li>
+                <li><a href="https://www.youtube.com/watch?v=olfaBgJrUBI">Design Payment System</a></li>
+            </ul>
+        
+
+            <h2>𝐇𝐚𝐫𝐝</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=M4lR_Va97cQ">Design Location Based Service like Yelp</a></li>
+                <li><a href="https://www.youtube.com/watch?v=umWABit-wbk">Design Uber</a></li>
+                <li><a href="https://www.youtube.com/watch?v=iRhSAR3ldTw">Design Food Delivery App like Doordash</a></li>
+                <li><a href="https://www.youtube.com/watch?v=2auwirNBvGg">Design Google Docs</a></li>
+                <li><a href="https://www.youtube.com/watch?v=jk3yvVfNvds">Design Google Maps</a></li>
+                <li><a href="https://www.youtube.com/watch?v=G32ThJakeHk">Design Zoom</a></li>
+                <li><a href="https://www.youtube.com/watch?v=U0xTu6E2CT8">Design File Sharing System like Dropbox</a></li>
+                <li><a href="https://www.youtube.com/watch?v=lBAwJgoO3Ek">Design Ticket Booking System like BookMyShow</a></li>
+                <li><a href="https://www.youtube.com/watch?v=BKZxZwUgL3Y">Design Distributed Web Crawler</a></li>
+                <li><a href="https://www.youtube.com/watch?v=q0KGYwNbf-0">Design Code Deployment System</a></li>
+                <li><a href="https://www.youtube.com/watch?v=UmWtcgC96X8">Design Distributed Cloud Storage like S3</a></li>
+                <li><a href="https://www.youtube.com/watch?v=v7x75aN9liM">Design Distributed Locking Service</a></li>
+            </ul>
+            <p>You can find the links to study these problems in this GitHub repo: <a href="https://lnkd.in/gSv3GeKZ">https://lnkd.in/gSv3GeKZ</a></p>
+
+            <h2>Here are some of the past challenges:</h2>
+            <p>
+            ⇢ Build your own QR Code Generator - <a href="https://lnkd.in/erhe9zcy">https://lnkd.in/erhe9zcy</a><br>
+            ⇢ Build your own crontab tool - <a href="https://lnkd.in/ekwAMevc">https://lnkd.in/ekwAMevc</a><br>
+            ⇢ Build your own Lisp interpreter - <a href="https://lnkd.in/eR7Q28yM">https://lnkd.in/eR7Q28yM</a><br>
+            ⇢ Build your own Redis server - <a href="https://lnkd.in/eHRCAmCE">https://lnkd.in/eHRCAmCE</a><br>
+            ⇢ Build your own URL shortener - <a href="https://lnkd.in/ezCc8EFR">https://lnkd.in/ezCc8EFR</a><br>
+            ⇢ Build your own Application Load Balancer - <a href="https://lnkd.in/eiBRVHNu">https://lnkd.in/eiBRVHNu</a><br>
+            ⇢ Build your own DNS Resolver - <a href="https://lnkd.in/eUB3nyxC">https://lnkd.in/eUB3nyxC</a><br>
+            ⇢ Build your own Git Client - <a href="https://lnkd.in/eG6jYyRm">https://lnkd.in/eG6jYyRm</a><br>
+            ⇢ Build your own Scheduling App - <a href="https://lnkd.in/eKDSRhdS">https://lnkd.in/eKDSRhdS</a><br>
+            ⇢ Build your own Rate Limiter - <a href="https://lnkd.in/e2C2RB4M">https://lnkd.in/e2C2RB4M</a><br>
+            ⇢ Build your own Message Broker - <a href="https://lnkd.in/eaFGTxKT">https://lnkd.in/eaFGTxKT</a><br>
+            ⇢ Build your own Web Server - <a href="https://lnkd.in/ezBDppnb">https://lnkd.in/ezBDppnb</a><br>
+            ⇢ Build your own Memcached server - <a href="https://lnkd.in/esGquJTy">https://lnkd.in/esGquJTy</a><br>
+            ⇢ Build your own IRC client - <a href="https://lnkd.in/eqWfX_JR">https://lnkd.in/eqWfX_JR</a><br>
+            ⇢ Build your own Discord Bot - <a href="https://lnkd.in/emAymj8b">https://lnkd.in/emAymj8b</a><br>
+            ⇢ Build your own compression tool using Huffman encoding - <a href="https://lnkd.in/e4WcUyYy">https://lnkd.in/e4WcUyYy</a><br>
+            ⇢ Build your own Spotify client - <a href="https://lnkd.in/eGDB9zgN">https://lnkd.in/eGDB9zgN</a><br>
+            ⇢ Build your own JSON parser - <a href="https://lnkd.in/ejWVe4H6">https://lnkd.in/ejWVe4H6</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

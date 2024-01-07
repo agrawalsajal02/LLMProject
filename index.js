@@ -1,177 +1,93 @@
 import express from 'express';
-import axios from 'axios';
-import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
+import pdfRoutes from './routes/pdfRoute.js';
+import { generatePdfPageUrl } from './utils/pdfUtils.js';
+import { getRandomQuery } from './data/tenorSuggestions.js';
+import fetchGifFromTenor from './services/tenor.js';
+import { fetchJokesFromOpenAi } from './services/openai.js';
+import { sendEmail } from './services/gmail.js';
+import { getRandomDesignTopic } from './data/systemTopics.js';
+import {getGeetaShlok} from "./services/bhagwatGeeta.js"
+import { createNotionPage } from './services/notion.js';
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import {fetchTopicForJournal} from "./services/journal.js"
+import {fetchTwoBhaktiVideo,fetchTwoMotivationalVideos,fetchTwoSongVideo} from "./services/youtubeVideo.js"
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 dotenv.config();
+
+const PORT = process.env.PORT || 3000;
+const RECIPIENT_EMAIL = process.env.RECIPIENT_EMAIL;
+const date = new Date().toLocaleDateString('en-US', { day: '2-digit', month: 'long' });
+const EMAIL_SUBJECT = `DayStarterDigest - A letter to Yourself - ${date}`;
+
 const app = express();
-const port = process.env.PORT || 3000;
 
+app.use('/pdf', pdfRoutes);
+app.use('/images', express.static(path.join(__dirname, 'images')));
+app.get('/', (req, res) => res.send('Hey this is my API running 🥳'));
+app.get('/send-email', generateAndSendEmail);
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
 
-
-app.get('/', (req, res) => {
-    res.send('Hey this is my API running 🥳')
-  })
-
-import OpenAI from "openai";
-
-const openai2 = new OpenAI({
-    organization: process.env.ORG_ID,
-    apiKey: process.env.API_KEY,
-});
-
-const GMAIL_USERNAME = process.env.GMAIL_USERNAME;
-const GMAIL_PASSWORD = process.env.GMAIL_PASSWORD;
-
-
-const openaiQuery = async (userPrompt) => {
-    return new Promise((resolve, reject) => {
-      openai2
-        .chat.completions.create({
-          model: "gpt-3.5-turbo",
-          messages: [{ role: "user", content: userPrompt }],
-        })
-        .then((openaiRes) => {
-          resolve(openaiRes.choices[0].message.content);
-        })
-        .catch((e) => {
-         console.log(e);
-          reject(e);
-        });
-    });
-  };
-
-  const TENOR_API_ENDPOINT = "https://tenor.googleapis.com/v2/search";
-  const TENOR_API_KEY = process.env.TENOR_API_KEY;
-
-  const fetchGifFromTenor= async (query) =>{
-    return new Promise((resolve, reject) => {
-        axios.get(TENOR_API_ENDPOINT, {
-            params: {
-                q: query,
-                key: TENOR_API_KEY,
-                limit: 1
-            }
-        })
-        .then(response => {
-            if (!response.data.results || response.data.results.length === 0) {
-                // console.log(response.data.media_formats);
-                reject(new Error('No GIF found'));
-            } else {
-                console.dir(response.data.results[0].media_formats.tinygif.url)
-                resolve(response.data.results[0].media_formats.tinygif.url);
-            }
-        })
-        .catch(error => {
-            reject(error);
-        });
-    });
-}
-
-const randomQueries = [
-    'laughing baby',
-    'excited squirrel',
-    'dancing grandma',
-    'funny fail',
-    'cute hedgehog',
-    'sleepy koala',
-    'clumsy penguin',
-    'surprised llama',
-    'playful dolphin',
-    'chasing tail',
-    'silly face',
-    'prank reaction',
-    'giggling parrot',
-    'hovering owl',
-    'slippery floor',
-    'startled cat',
-    'breakdancing dog',
-    'turtle speed race',
-    'awkward handshake',
-    'funny cat' // Included your initial query as well
-];
-
-const getRandomQuery = (queries) => {
-    const randomIndex = Math.floor(Math.random() * queries.length);
-    return queries[randomIndex];
-};
-
-
-
-app.get('/send-email', async (req, res) => {
-   let emailHtml = '<html><body>';
-
+async function generateAndSendEmail(req, res) {
     try {
-    
-        const joke = await fetchJokesFromOpenAi();
-        emailHtml += `<h2>Joke of the day:</h2> <p>${joke}</p>`;
-
-        console.log("Fetching Tenor API");
-        const gifUrl = await fetchGifFromTenor(getRandomQuery(randomQueries));
-        console.log(gifUrl)
-        emailHtml += `<p><img src="${gifUrl}"  alt="Random Funny GIF" /></p>`;
-
-
-        const motivation = await fetchMotivationFromOpenAI();
-        emailHtml += `<h2>Motivation of the day:</h2> <p>${motivation}</p>`;
-
-        // Complete the HTML
-        emailHtml += '</body></html>';
-
-        console.log("Sending Email");
-        await sendEmail('sajal.agarwal705@gmail.com', 'Motivation', emailHtml);
-        await sendEmail('agarwal.tanya8@gmail.com', 'Motivation', emailHtml);
+        const emailContent = await generateEmailContent(req);
+        await sendEmail(RECIPIENT_EMAIL, EMAIL_SUBJECT, emailContent);
+        console.log("Email sent successfully!");
         res.send('Email sent successfully!');
     } catch (error) {
-        console.error("Error sending email: ", error);
+        console.error("Error in generateAndSendEmail: ", error);
         res.status(500).send('Error sending email');
     }
-});
-
-async function fetchBirthdaysFromGoogleCalendar() {
-    // Implement Google Calendar API logic here.
-    // Return an array of birthday events.
-    return ['Alice', 'Bob'];
 }
 
-async function fetchMotivationFromOpenAI() {
-    // Implement OpenAI API logic here.
-    // Return motivation text.
-    console.log("Fetching quote from bhagwat geeta")
-    return await openaiQuery("Give a quote from bhagwat geeta")
-}
+async function generateEmailContent(req) {
+    const joke = await fetchJokesFromOpenAi();
+    const gifUrl = await fetchGifFromTenor(getRandomQuery());
+    const systemDesignPdfUrl = await generatePdfPageUrl(req, "SystemDesign");
+    const navalRaikantPdfUrl = await generatePdfPageUrl(req, "NavalRaikant");
+    const designTopic = getRandomDesignTopic();
+    const journalIdea = fetchTopicForJournal();
+    const geetaShlok = await getGeetaShlok(req);
 
-async function fetchTasksFromNotion() {
-    // Implement Notion API logic here.
-    // Return an array of tasks.
-}
+    const motivationalVideo = fetchTwoMotivationalVideos();
+    const bhaktiVideo = fetchTwoBhaktiVideo();
+    const songVideo = fetchTwoSongVideo();
+    const email =  `${req.protocol}://${req.get('host')}`+"/send-email";
+    // we can also suggest number of topics we can task about and we can also store  these in the notion page itself
+    const notionPage = await createNotionPage();
 
-async function fetchJokesFromOpenAi() {
-    // Implement Notion API logic here.
-    // Return an array of tasks.
-    console.log("fetching jokes from openAI")
-    return await openaiQuery("Tell me a joke that a indian can relate")
-}
+    // Read the HTML template
+    const templatePath = path.join(__dirname, './templates/emailTemplate.html');
+    let emailContent = fs.readFileSync(templatePath, 'utf-8');
 
-async function sendEmail(to, subject, text) {
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: GMAIL_USERNAME,
-            pass: GMAIL_PASSWORD
-        }
-    });
+    emailContent = emailContent.replace('{{joke}}', joke);
+    emailContent = emailContent.replace('{{gifUrl}}', gifUrl);
+    emailContent = emailContent.replace('{{systemDesignPdfUrl}}', systemDesignPdfUrl);
+    emailContent = emailContent.replace('{{navalRaikantPdfUrl}}', navalRaikantPdfUrl);
+    emailContent = emailContent.replace('{{getRandomDesignTopic}}', designTopic.url);
+    emailContent = emailContent.replace('{{subTopicName}}', designTopic.subTopic);
+    emailContent = emailContent.replace('{{geetaShlok}}', geetaShlok);
+    emailContent = emailContent.replace('{{notionPage}}', notionPage.url);
+    emailContent = emailContent.replace('{{journalIdea}}', journalIdea);
 
-    let mailOptions = {
-        from: GMAIL_USERNAME,
-        to: to,
-        subject: subject,
-        // text: text
-        html: text
-    };
+    emailContent = emailContent.replace(/{{motivationalVideo-1}}/g, motivationalVideo[0]);
+    emailContent = emailContent.replace(/{{motivationalVideo-2}}/g, motivationalVideo[1]);
+    emailContent = emailContent.replace(/{{bhaktiVideo-1}}/g, bhaktiVideo[0]);
+    emailContent = emailContent.replace(/{{bhaktiVideo-2}}/g, bhaktiVideo[1]);
+    emailContent = emailContent.replace(/{{songVideo-1}}/g, songVideo[0]);
+    emailContent = emailContent.replace(/{{songVideo-2}}/g, songVideo[1]);
+    emailContent = emailContent.replace(/{{songVideo-3}}/g, songVideo[2]);
 
-    await transporter.sendMail(mailOptions);
+    emailContent = emailContent.replace('{{email-trigger}}', email);
+
+    // can have video of chanykaya niti as well
+    return emailContent;
 }
